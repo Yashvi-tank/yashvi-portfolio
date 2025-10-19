@@ -1,103 +1,82 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import OrbitCloud from '@/components/OrbitCloud';
+
+export default function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <main className="min-h-screen bg-neutral-950 text-white">
+      {/* ─────────────────────────────
+          HERO SECTION WITH FLOATING BUBBLES
+      ───────────────────────────── */}
+      <section className="relative isolate overflow-hidden flex flex-col items-center justify-center py-24 sm:py-32 text-center">
+        {/* Floating tech bubbles (background layer) */}
+        <OrbitCloud
+          count={16}          // number of bubbles
+          innerRadius={160}   // hole radius (keeps clear space for name)
+          outerRadius={340}   // maximum floating radius
         />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        {/* Main hero content (foreground layer) */}
+        <div className="relative z-10 flex flex-col items-center justify-center px-6">
+          {/* Tagline above heading */}
+          <p className="mb-6 rounded-full bg-white/5 px-4 py-2 text-sm text-white/80">
+            EPITA • 3rd year Bachelor&apos;s • Paris, France
+          </p>
+
+          {/* Heading */}
+          <h1 className="text-5xl font-extrabold tracking-tight sm:text-6xl">
+            Hello, I&apos;m
+          </h1>
+
+          <h2 className="mt-2 mb-6 block text-[68px] sm:text-[112px] md:text-[140px] font-extrabold leading-none">
+            Yashvi Tank
+          </h2>
+
+          {/* Accent line */}
+          <div className="mb-8 h-1 w-28 rounded-full bg-gradient-to-r from-emerald-400 to-fuchsia-400 opacity-80" />
+
+          {/* Sub-heading */}
+          <p className="mx-auto max-w-2xl text-lg text-white/80">
+            Product-minded Frontend/AI Student. I blend engineering rigor with playful creativity to build delightful, accessible interfaces.
+          </p>
+
+          {/* Call-to-action buttons */}
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="#contact"
+              className="rounded-full bg-white/10 px-6 py-3 text-sm font-medium text-white hover:bg-white/15 transition-colors"
+            >
+              Let&apos;s Connect
+            </a>
+            <a
+              href="#availability"
+              className="rounded-full border border-emerald-500/40 bg-emerald-500/10 px-6 py-3 text-sm font-medium text-emerald-200 hover:bg-emerald-500/15 transition-colors"
+            >
+              Available for internships
+            </a>
+          </div>
+
+          {/* Social links */}
+          <div className="mt-8 flex gap-6 text-sm text-white/70">
+            <a href="mailto:your@email.com" className="hover:text-white transition-colors">
+              Email
+            </a>
+            <a href="https://github.com/yourgithub" target="_blank" className="hover:text-white transition-colors">
+              GitHub
+            </a>
+            <a href="https://linkedin.com/in/your-linkedin" target="_blank" className="hover:text-white transition-colors">
+              LinkedIn
+            </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* ─────────────────────────────
+          FOOTER
+      ───────────────────────────── */}
+      <footer className="py-10 text-center text-sm text-white/50">
+        © 2025 Yashvi Tank — Crafted with Next.js &amp; Tailwind
       </footer>
-    </div>
+    </main>
   );
 }
