@@ -4,11 +4,11 @@ import WorkReel from '@/components/WorkReel';
 
 const projects = [
   {
-    title: 'AI Compliance',
-    desc: 'AI-assistant on GDPR rules',
-    tags: ['Python', 'Streamlit', 'OpenAI'],
+    title: 'Linda Agentic AI',
+    desc: 'Multi-agent RAG assistant with Streamlit UI, sources & agent trace.',
+    tags: ['Python', 'Streamlit', 'OpenAI', 'Pinecone'],
     href: '#',
-    image: '/images/AI.jpg',
+    image: '/images/linda.jpg',
   },
   {
     title: 'SafeWalk',
@@ -36,8 +36,7 @@ const projects = [
 export default function WorkPage() {
   return (
     <section className="py-16">
-      <SectionHeader title="Selected Work" />
-
+      <SectionHeader title="Selected Work" right={<Pill>Swipe / Scroll →</Pill>} />
       <WorkReel items={projects} />
     </section>
   );
